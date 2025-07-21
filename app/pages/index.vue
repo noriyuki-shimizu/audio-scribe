@@ -2,7 +2,7 @@
   <div class="container">
     <header class="card">
       <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: #1e293b">
-        <MainIconSvg />
+        <MainIconSvg style="width: 40px; height: 40px" />
         Audio Scribe
       </h1>
       <p style="color: #64748b; font-size: 1.1rem">リアルタイム音声文字起こしサービス</p>
@@ -23,7 +23,10 @@
           録音開始
         </button>
 
-        <button v-if="isRecording" class="button button-danger" @click="stopRecording">⏹️ 録音停止</button>
+        <button v-if="isRecording" class="button button-danger" @click="stopRecording">
+          <CircleStopSvg class="icon" style="color: #fff" />
+          録音停止
+        </button>
 
         <div
           class="status-indicator"
@@ -34,8 +37,11 @@
           }"
         >
           <span v-if="!isRecording && !isProcessing">待機中</span>
-          <span v-if="isRecording">🔴 録音中</span>
-          <span v-if="isProcessing">
+          <span v-if="isRecording" class="status-text">
+            <CircleSvg class="icon" style="color: #dc2626" />
+            録音中
+          </span>
+          <span v-if="isProcessing" class="status-text">
             <div class="loading-dots"></div>
             処理中...
           </span>
@@ -59,7 +65,9 @@
         @dragleave="handleDragLeave"
         @click="fileInput?.click()"
       >
-        <div style="font-size: 3rem; margin-bottom: 1rem">📁</div>
+        <div style="font-size: 3rem; margin-bottom: 1rem">
+          <FileImportSvg style="width: 48px; height: 48px; color: #3b82f6" />
+        </div>
         <p style="margin-bottom: 0.5rem; font-weight: 600">音声ファイルをドラッグ＆ドロップまたはクリックして選択</p>
         <p style="color: #64748b; font-size: 0.9rem">対応形式: MP3, WAV, M4A, WEBM (最大25MB)</p>
       </div>
@@ -92,14 +100,16 @@
 
       <div v-if="transcripts.length > 0" style="margin-top: 1rem">
         <button class="button" style="background-color: #64748b; color: white" @click="clearTranscripts">
-          🗑️ クリア
+          <TrashSvg class="icon" />
+          クリア
         </button>
         <button
           class="button"
           style="background-color: #059669; color: white; margin-left: 0.5rem"
           @click="copyToClipboard"
         >
-          📋 コピー
+          <ClipboardSvg class="icon" />
+          コピー
         </button>
       </div>
     </div>
@@ -108,8 +118,13 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import CircleStopSvg from '@/assets/svg/circle-stop.svg'
+import CircleSvg from '@/assets/svg/circle.svg'
+import ClipboardSvg from '@/assets/svg/clipboard.svg'
+import FileImportSvg from '@/assets/svg/file-import.svg'
 import MainIconSvg from '@/assets/svg/main-icon.svg'
 import MicrophoneSvg from '@/assets/svg/microphone.svg'
+import TrashSvg from '@/assets/svg/trash.svg'
 
 // 型定義
 interface Transcript {
