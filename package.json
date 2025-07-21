@@ -1,0 +1,41 @@
+{
+  "name": "audio-scribe",
+  "description": "Real-time audio transcription service using OpenAI Whisper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint:e": "eslint .",
+    "format:e": "yarn lint:e --fix",
+    "format:d": "dprint fmt"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^1.6.0",
+    "@types/multer": "^2.0.0",
+    "@types/ws": "^8.18.1",
+    "eslint": "^9.31.0",
+    "multer": "^2.0.2",
+    "nuxt": "^4.0.0",
+    "nuxt-svgo": "^4.2.4",
+    "openai": "^5.10.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1",
+    "ws": "^8.18.3"
+  },
+  "volta": {
+    "node": "24.4.1",
+    "npm": "11.4.2"
+  },
+  "devDependencies": {
+    "dprint": "^0.50.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-unused-imports": "^4.1.4"
+  }
+}

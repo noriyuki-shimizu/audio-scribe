@@ -1,0 +1,13 @@
+{
+  "editor.defaultFormatter": "dprint.dprint",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  "css.validate": false,
+  "scss.validate": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "typescript.referencesCodeLens.enabled": true
+}
