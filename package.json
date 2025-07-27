@@ -37,6 +37,7 @@
   "devDependencies": {
     "dprint": "^0.50.1",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-unused-imports": "^4.1.4"
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "sass": "^1.89.2"
   }
 }
